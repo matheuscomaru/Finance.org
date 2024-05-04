@@ -2,7 +2,6 @@ package org.finance.init;
 
 import java.awt.Font;
 import java.awt.SystemColor;
-import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.File;
@@ -24,7 +23,6 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.Scanner;
 
-import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
@@ -35,8 +33,6 @@ import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
 import javax.swing.SwingConstants;
 import javax.swing.border.EmptyBorder;
-
-import org.finance.init.dao.ModuloConexao;
 
 public class FrmUpdate extends JFrame {
 
@@ -120,9 +116,7 @@ public class FrmUpdate extends JFrame {
 				progressBar.setVisible(true);
 				btnNewButton.setEnabled(false);
 
-				status.setText("Verificando notas versão.");
-
-				verificaVersao();
+				status.setText("Verificando notas versï¿½o.");
 
 				progressBar.setVisible(false);
 				btnNewButton.setEnabled(true);
@@ -130,31 +124,6 @@ public class FrmUpdate extends JFrame {
 				status.setText("Pronto.");
 			}
 		}.start();
-	}
-
-	private void verificaVersao() {
-
-		String sql = " SELECT v.versao,app.url, v.obs FROM versoes v, apps app WHERE v.app = app.nome and app=? "
-				+ " order by v.id desc limit 1";
-
-		try {
-			pstTecgesco = conexaoTecgesco.prepareStatement(sql);
-			pstTecgesco.setString(1, app.getNome());
-			ResultSet rs = pstTecgesco.executeQuery();
-			if (rs.next()) {
-
-				urlDownload = rs.getString("url");
-				txtNotasVersao.setText(rs.getString("obs"));
-
-			}
-
-			conexaoTecgesco.close();
-
-		} catch (SQLException e1) {
-			System.out.println(e1);
-			JOptionPane.showMessageDialog(null, e1);
-		}
-
 	}
 
 	private void atualizar() {
@@ -165,28 +134,16 @@ public class FrmUpdate extends JFrame {
 
 		if (urlDownload.isEmpty() || urlDownload.length() <= 0) {
 
-			JOptionPane.showMessageDialog(null, urlDownload + " não é uma URL válida.");
+			JOptionPane.showMessageDialog(null, urlDownload + " nÃ£o Ã© uma URL vÃ¡lida.");
 
 		} else {
 
 			System.out.println("URL = " + urlDownload);
-			status.setText("Atualizando aplicação");
+			status.setText("Atualizando aplicaÃ§Ã£o");
 			download(urlDownload, caminhoJar, null, 0);
 
 		}
 	}
-
-//	public void atualizarBD() {
-//		status.setText("Atualizando banco de dados");
-//		String temp = System.getProperty("java.io.tmpdir");
-//		System.out.println("temp:" + temp);
-//		status.setText("temp:" + temp);
-//		String urlUpdateFile = "https://drive.google.com/u/0/uc?id=12ZL4zvKG3ztrWm-q7htIkJ4DOSeSJZr4&export=download";
-//		download(urlUpdateFile, temp + "updatedb.txt", null, 0);
-//		PROCESSAR_ARQUIVO();
-//		
-//
-//	}
 
 	private void download(String address, String localFileName, String host, int porta) {
 
@@ -319,9 +276,8 @@ public class FrmUpdate extends JFrame {
 
 			@Override
 			public void run() {
-				status.setText("Obtendo versão publicada");
+				status.setText("Obtendo versï¿½o publicada");
 				progressBar.setVisible(true);
-				conexaoTecgesco = ModuloConexao.conectorMysql();
 				progressBar.setVisible(false);
 				status.setText(null);
 			}
@@ -337,12 +293,13 @@ public class FrmUpdate extends JFrame {
 			public void run() {
 				progressBar.setVisible(true);
 				btnNewButton.setEnabled(false);
-				status.setText("Atualizando aplicação");
+				status.setText("Atualizando aplicaÃ§Ã£o");
 				atualizar();
+
 				progressBar.setVisible(false);
 				status.setText(null);
 				btnNewButton.setEnabled(true);
-				JOptionPane.showMessageDialog(null, "Sua aplicação foi atualizada com sucesso.");
+				JOptionPane.showMessageDialog(null, "Sua aplicaÃ§Ã£o foi atualizada com sucesso.");
 				System.exit(0);
 
 			}

@@ -1,6 +1,8 @@
 package org.finance.init;
 
 import javax.swing.UIManager;
+import javax.swing.UIManager.LookAndFeelInfo;
+
 import com.formdev.flatlaf.FlatLightLaf;
 
 public class App {
@@ -8,7 +10,7 @@ public class App {
 	private static final boolean skipLoad = false;
 	private static final boolean debug = true;
 	private static final String APPNOME = "Finance Org";
-	private static final String VERSAO = "1.1.0";
+	private static final String VERSAO = "1.0.0";
 
 	public static final String getVersao() {
 		return VERSAO;
@@ -22,19 +24,49 @@ public class App {
 		return debug;
 	}
 
-	private static void defineTheme() {
+	private static void defineTheme(String tema) {
+
 		try {
-			UIManager.setLookAndFeel(new FlatLightLaf());
+
+			switch (tema) {
+			case "Windows":
+				UIManager.setLookAndFeel("com.sun.java.swing.plaf.windows.WindowsLookAndFeel");
+				break;
+			case "Nimbus":
+				UIManager.setLookAndFeel("javax.swing.plaf.nimbus.NimbusLookAndFeel");
+				break;
+
+			default:
+				UIManager.setLookAndFeel("javax.swing.plaf.metal.MetalLookAndFeel");
+				break;
+			}
+
 		} catch (Exception ex) {
 			System.err.println("Failed to initialize LaF");
 		}
+
+		// Windows
+		// UIManager.setLookAndFeel("com.sun.java.swing.plaf.windows.WindowsLookAndFeel");
+
+		// Windows Classic
+		// UIManager.setLookAndFeel("com.sun.java.swing.plaf.windows.WindowsClassicLookAndFeel");
+
+		// metal
+		// UIManager.setLookAndFeel("javax.swing.plaf.metal.MetalLookAndFeel");
+
+		// Nimbus
+		// UIManager.setLookAndFeel("javax.swing.plaf.nimbus.NimbusLookAndFeel");
+
+		// Motif
+		// UIManager.setLookAndFeel("com.sun.java.swing.plaf.motif.MotifLookAndFeel");
+
 	}
 
 	public static void main(String[] args) {
-		System.out.println("Iniciando a aplicaÁ„o!");
-		System.out.println("Vers„o: " + getVersao());
+		System.out.println("Iniciando a aplica√ß√£o!");
+		System.out.println("Vers√£o: " + getVersao());
 
-		defineTheme();
+		defineTheme("Nimbus");
 
 		if (skipLoad) {
 			FrmHome home = new FrmHome();
@@ -42,7 +74,8 @@ public class App {
 			return;
 		}
 
-		FrmLoad load = new FrmLoad();
-		load.setVisible(true);
+		FrmLogin login = new FrmLogin();
+		login.setVisible(true);
 	}
+
 }
