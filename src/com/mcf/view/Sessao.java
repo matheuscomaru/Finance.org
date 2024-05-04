@@ -1,4 +1,4 @@
-package org.finance.init;
+package com.mcf.view;
 
 public class Sessao {
 

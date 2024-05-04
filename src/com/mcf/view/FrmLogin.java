@@ -1,4 +1,4 @@
-package org.finance.init;
+package com.mcf.view;
 
 import java.awt.Color;
 import java.awt.EventQueue;
@@ -23,13 +23,13 @@ import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.SwingConstants;
 import javax.swing.UIManager;
-
-import org.finance.init.dao.ModuloConexao;
 import javax.swing.JPasswordField;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import java.awt.BorderLayout;
 import javax.swing.border.BevelBorder;
+
+import com.mcf.dao.ModuloConexao;
 
 public class FrmLogin extends JFrame {
 

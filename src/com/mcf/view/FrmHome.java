@@ -1,4 +1,4 @@
-package org.finance.init;
+package com.mcf.view;
 
 import java.awt.BorderLayout;
 import java.awt.Color;
@@ -28,7 +28,7 @@ import javax.swing.SwingConstants;
 import javax.swing.border.BevelBorder;
 import javax.swing.border.LineBorder;
 
-import org.finance.init.dao.ModuloConexao;
+import com.mcf.dao.ModuloConexao;
 
 public class FrmHome extends JFrame {
 	private JPanel contentPane;

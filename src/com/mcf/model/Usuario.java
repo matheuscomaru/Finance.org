@@ -1,4 +1,4 @@
-package org.finance.model;
+package com.mcf.model;
 
 public class Usuario {
 

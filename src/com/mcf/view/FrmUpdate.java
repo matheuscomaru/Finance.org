@@ -1,4 +1,4 @@
-package org.finance.init;
+package com.mcf.view;
 
 import java.awt.Font;
 import java.awt.SystemColor;

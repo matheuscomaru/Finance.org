@@ -1,7 +1,7 @@
 /**
  * 
  */
-package org.finance.init.dao;
+package com.mcf.dao;
 
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
@@ -44,7 +44,7 @@ public class ConfigDao {
 			if (prop.containsKey(param)) {
 				return prop.getProperty(param);
 			} else {
-				System.out.println("A propriedade " + param + " não foi encontrada.");
+				System.out.println("A propriedade " + param + " nï¿½o foi encontrada.");
 			}
 
 		} catch (IOException ex) {

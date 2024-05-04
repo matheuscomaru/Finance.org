@@ -1,4 +1,4 @@
-package org.finance.init.dao;
+package com.mcf.dao;
 
 import java.sql.Connection;
 import java.sql.DriverManager;

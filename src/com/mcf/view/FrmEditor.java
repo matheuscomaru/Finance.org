@@ -1,4 +1,4 @@
-package org.finance.init;
+package com.mcf.view;
 
 import java.awt.Color;
 import java.awt.Font;
@@ -19,7 +19,8 @@ import javax.swing.JTextField;
 import javax.swing.border.EmptyBorder;
 import javax.swing.border.EtchedBorder;
 import javax.swing.border.TitledBorder;
-import org.finance.init.dao.ConfigDao;
+
+import com.mcf.dao.ConfigDao;
 
 public class FrmEditor extends JFrame {
 
@@ -186,7 +187,7 @@ public class FrmEditor extends JFrame {
 		configDao.salvarConfig("db.diretorio", dir);
 		configDao.salvarConfig("db.cnpj", cnpj);
 
-		JOptionPane.showMessageDialog(null, "Dados de conexão salvos com sucesso.");
+		JOptionPane.showMessageDialog(null, "Dados de conexï¿½o salvos com sucesso.");
 		System.exit(0);
 
 	}

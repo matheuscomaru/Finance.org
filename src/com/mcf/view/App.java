@@ -1,4 +1,4 @@
-package org.finance.init;
+package com.mcf.view;
 
 import javax.swing.UIManager;
 import javax.swing.UIManager.LookAndFeelInfo;
