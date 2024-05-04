@@ -1,4 +1,4 @@
-package com.mcf.view;
+package br.com.mcf.view;
 
 import java.awt.Color;
 import java.awt.EventQueue;
@@ -29,7 +29,7 @@ import java.awt.event.ActionEvent;
 import java.awt.BorderLayout;
 import javax.swing.border.BevelBorder;
 
-import com.mcf.dao.ModuloConexao;
+import br.com.mcf.dao.ModuloConexao;
 
 public class FrmLogin extends JFrame {
 

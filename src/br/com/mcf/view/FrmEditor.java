@@ -1,4 +1,4 @@
-package com.mcf.view;
+package br.com.mcf.view;
 
 import java.awt.Color;
 import java.awt.Font;
@@ -20,7 +20,7 @@ import javax.swing.border.EmptyBorder;
 import javax.swing.border.EtchedBorder;
 import javax.swing.border.TitledBorder;
 
-import com.mcf.dao.ConfigDao;
+import br.com.mcf.dao.ConfigDao;
 
 public class FrmEditor extends JFrame {
 

@@ -1,7 +1,7 @@
 /**
  * 
  */
-package com.mcf.dao;
+package br.com.mcf.dao;
 
 import java.io.FileInputStream;
 import java.io.FileOutputStream;

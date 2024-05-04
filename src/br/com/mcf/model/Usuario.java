@@ -1,4 +1,4 @@
-package com.mcf.model;
+package br.com.mcf.model;
 
 public class Usuario {
 

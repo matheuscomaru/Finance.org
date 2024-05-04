@@ -1,4 +1,4 @@
-package com.mcf.view;
+package br.com.mcf.view;
 
 public class Sessao {
 

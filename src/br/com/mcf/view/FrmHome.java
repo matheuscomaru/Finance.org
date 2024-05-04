@@ -1,4 +1,4 @@
-package com.mcf.view;
+package br.com.mcf.view;
 
 import java.awt.BorderLayout;
 import java.awt.Color;
@@ -28,7 +28,7 @@ import javax.swing.SwingConstants;
 import javax.swing.border.BevelBorder;
 import javax.swing.border.LineBorder;
 
-import com.mcf.dao.ModuloConexao;
+import br.com.mcf.dao.ModuloConexao;
 
 public class FrmHome extends JFrame {
 	private JPanel contentPane;

@@ -1,4 +1,4 @@
-package com.mcf.view;
+package br.com.mcf.view;
 
 import javax.swing.UIManager;
 import javax.swing.UIManager.LookAndFeelInfo;
